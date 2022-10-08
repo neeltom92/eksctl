@@ -10,4 +10,6 @@ a simple yaml for EKSCTL
 - "kubernetes.io/cluster/$CLUSTER_NAME"
 	- ensure that $CLUSTER_NAME should be the name in eksctl yaml and cloudformation yaml
 
+- IMPORTANT: change the "API Server Access" to Private to make it a Private cluster
+
  
