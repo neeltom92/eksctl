@@ -3,7 +3,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: prod
+  name: prod-eks
   region: ap-southeast-1
   version: '1.22'
 
