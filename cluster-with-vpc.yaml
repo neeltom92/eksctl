@@ -1,0 +1,37 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: prod
+  region: ap-southeast-1
+  version: '1.22'
+
+vpc:
+  id: vpc-0b59a6df75cc04557
+  subnets:
+    private:
+      ap-southeast-1a: { id: subnet-03386ab4c719483de }
+      ap-southeast-1b: { id: subnet-0d9571943ef2e7e94 }
+      ap-southeast-1c: { id: subnet-01d8f7d0b5371ad03 }
+    public:
+      ap-southeast-1a: { id: subnet-0a3b51f341afae70d }
+      ap-southeast-1b: { id: subnet-01b36340edfbb78f4 }
+      ap-southeast-1c: { id: subnet-03dbf3bf90bd03d30 }
+
+
+nodeGroups:
+  - name: node-group-1
+    instanceType: m5.large
+    minSize: 2
+    maxSize: 3
+    desiredCapacity: 2
+    privateNetworking: true
+    availabilityZones: ["ap-southeast-1a", "ap-southeast-1b", "ap-southeast-1c"]
+#    labels: { type: prod }
+iam:
+  withOIDC: true
+
+
+
+
